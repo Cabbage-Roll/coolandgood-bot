@@ -2,6 +2,7 @@
 #define WINVER 0x0500
 #include <windows.h>
 #include <bits/stdc++.h>
+#include <fstream>
 
 #include "piece.hpp"
 #include "determinepiece.hpp"
@@ -88,6 +89,11 @@ void commoncode(char* bag){
 
 int main()
 {
+    ifstream config;
+    config.open("config.txt", ios::in);
+    int x;
+    config>>x;
+    cout<<x<<endl;
     char* bag=(char*)malloc(sizeof(char)*7);
     bag[0]='x';
 
@@ -201,9 +207,16 @@ int main()
     debug2(bag);
     ///3rd bag
     codeflush();
-    for(n=0;n<7;n++){
-        commoncode(bag);
-        b3(bag);
+    if(pos('o',bag)<pos('j',bag) || pos('t',bag)<pos('l',bag)){
+        for(n=0;n<7;n++){
+            commoncode(bag);
+            b3(bag);
+        }
+    }else{
+        for(n=0;n<7;n++){
+            commoncode(bag);
+            b3p1(bag);
+        }
     }
     debug1(bag);
     debug2(bag);

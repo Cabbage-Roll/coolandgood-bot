@@ -85,4 +85,22 @@ switch(bag[1]){
             break;
         }
 }
+void b3p1(char* bag){
+    switch(bag[1]){
+    case 'z':
+        break;
+    case 'l':
+        break;
+    case 'o':
+        break;
+    case 's':
+        break;
+    case 'i':
+        break;
+    case 'j':
+        break;
+    case 't':
+        break;
+    }
+}
 #endif

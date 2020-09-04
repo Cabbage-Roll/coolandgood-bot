@@ -19,7 +19,7 @@ void kb(short d, bool m){
     Sleep(1+mu);
     ip.ki.dwFlags = KEYEVENTF_KEYUP;
     SendInput(1, &ip, sizeof(INPUT));
-    Sleep(67-66*m);
+    Sleep(166-133*m);
     }
 }
 #endif
