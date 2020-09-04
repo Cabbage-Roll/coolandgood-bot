@@ -41,7 +41,7 @@
 		<Unit filename="bags/4.hpp" />
 		<Unit filename="bags/5.hpp" />
 		<Unit filename="bags/bagbug.txt" />
-		<Unit filename="bags/first.txt" />
+		<Unit filename="bags/second.txt" />
 		<Unit filename="codehold.hpp" />
 		<Unit filename="determinepiece.hpp" />
 		<Unit filename="kb.hpp" />

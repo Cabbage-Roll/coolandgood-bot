@@ -57,6 +57,5 @@ Piece t(163,73,164);
 int hold=0;
 int n;
 bool holded=false;
-bool firstn=false;
 char temp;
 #endif

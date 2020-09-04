@@ -33,17 +33,6 @@ HDC screen;
 unsigned long pixel;
 int sx=SINGLEPLAYER;
 
-void codeflush(){
-    z.placed=false;
-    l.placed=false;
-    o.placed=false;
-    s.placed=false;
-    i.placed=false;
-    j.placed=false;
-    t.placed=false;
-    firstn=true;
-}
-
 void codeshift(char* bag){
     bag[1]=bag[2];
     bag[2]=bag[3];
@@ -57,6 +46,16 @@ void codeshift(char* bag){
     ReleaseDC(NULL, screen);
 }
 
+void codeflush(char* bag){
+    z.placed=false;
+    l.placed=false;
+    o.placed=false;
+    s.placed=false;
+    i.placed=false;
+    j.placed=false;
+    t.placed=false;
+    codeshift(bag);
+}
 void debug1(char* bag){
     cout<<"holds: "<<hold<<"\n";
     cout<<"all:"<<bag[0]<<bag[1]<<bag[2]<<bag[3]<<bag[4]<<bag[5]<<bag[6]<<"\n";
@@ -67,24 +66,18 @@ void debug1(char* bag){
 void debug2(char* bag){
     cout<<"n: "<<n<<"\n";
     cout<<"holded: "<<holded<<"\n";
-    cout<<"firstn: "<<firstn<<"\n";
     cout<<"\n";
 }
 
 void commoncode(char* bag){
-    if((firstn==true || (n>0 && holded==false)) || hold==1){
+    if((n>0 && holded==false) || hold==1){
         codeshift(bag);
         }
-
-    firstn=false;
 
     if(n==6 && hold>0){
         codehold(bag);
     }
 
-    if(bag[1]=='x'){
-        cout<<"INVALID ! COLORS:"<<(int)(GetRValue(pixel))<<" "<< (int)(GetGValue(pixel))<<" "<<(int)(GetBValue(pixel))<<"\n";
-    }
 }
 
 int main()
@@ -145,36 +138,18 @@ int main()
     if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && pos('o',bag)+pos('t',bag)!=3){
         if(pos('j',bag)<pos('l',bag)){
             for(n=0;n<7;n++){
-                if(hold==1 || (n>0 && holded==false)){
-                    codeshift(bag);
-                }
-
-                if(n==6 && hold>0){
-                    codehold(bag);
-                }
+                commoncode(bag);
                 b1(bag);
             }
         }else{
             for(n=0;n<7;n++){
-                if(hold==1 || (n>0 && holded==false)){
-                    codeshift(bag);
-                }
-
-                if(n==6 && hold>0){
-                    codehold(bag);
-                }
+                commoncode(bag);
                 b1LOJ(bag);
             }
         }
     }else{
         for(n=0;n<7;n++){
-            if(hold==1 || (n>0 && holded==false)){
-                codeshift(bag);
-            }
-
-            if(n==6 && hold>0){
-                codehold(bag);
-            }
+            commoncode(bag);
             b12(bag);
         }
     }
@@ -184,7 +159,7 @@ int main()
 
     while(1){
     ///2nd bag
-    codeflush();
+    codeflush(bag);
     if(pos('j',bag)<pos('z',bag) || pos('j',bag)<pos('s',bag)){
         for(n=0;n<7;n++){
             commoncode(bag);
@@ -206,7 +181,7 @@ int main()
     debug1(bag);
     debug2(bag);
     ///3rd bag
-    codeflush();
+    codeflush(bag);
     if(pos('o',bag)<pos('j',bag) || pos('t',bag)<pos('l',bag)){
         for(n=0;n<7;n++){
             commoncode(bag);
@@ -221,7 +196,7 @@ int main()
     debug1(bag);
     debug2(bag);
     ///4th bag
-    codeflush();
+    codeflush(bag);
     if(pos('z',bag)<pos('s',bag) && pos('z',bag)<pos('o',bag)){
         for(n=0;n<7;n++){
             commoncode(bag);
@@ -236,7 +211,7 @@ int main()
     debug1(bag);
     debug2(bag);
     ///5th bag
-    codeflush();
+    codeflush(bag);
     if(pos('z',bag)<pos('l',bag)){
         for(n=0;n<7;n++){
             commoncode(bag);
@@ -251,7 +226,7 @@ int main()
     debug1(bag);
     debug2(bag);
     ///1st bag
-    codeflush();
+    codeflush(bag);
     if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && pos('o',bag)+pos('t',bag)!=3){
         if(pos('j',bag)<pos('l',bag)){
             for(n=0;n<7;n++){
