@@ -2,6 +2,7 @@
 #define KB_HPP
 #include <windows.h>
 #include <iostream>
+#include "piece.hpp"
 void kb(short d, bool m){
     int mu=0;
     if(d==VK_DOWN)
@@ -19,7 +20,7 @@ void kb(short d, bool m){
     Sleep(1+mu);
     ip.ki.dwFlags = KEYEVENTF_KEYUP;
     SendInput(1, &ip, sizeof(INPUT));
-    Sleep(166-133*m);
+    Sleep(cfg[8]-cfg[9]*m);
     }
 }
 #endif

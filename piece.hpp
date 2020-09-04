@@ -58,4 +58,5 @@ int hold=0;
 int n;
 bool holded=false;
 char temp;
+int cfg[10];
 #endif
