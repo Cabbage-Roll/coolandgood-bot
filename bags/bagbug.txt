@@ -18,3 +18,5 @@ template
     case 't':
         break;
     }
+
+    test
