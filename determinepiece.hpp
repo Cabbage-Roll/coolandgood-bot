@@ -2,20 +2,20 @@
 #define DETERMINEPIECE_HPP
 #include "piece.hpp"
 
-char determinepiece(int r, int g, int b){
-    if(z.check(r,g,b))
+char determinepiece(unsigned long c){
+    if(z.check(c))
         return 'z';
-    if(l.check(r,g,b))
+    if(l.check(c))
         return 'l';
-    if(o.check(r,g,b))
+    if(o.check(c))
         return 'o';
-    if(s.check(r,g,b))
+    if(s.check(c))
         return 's';
-    if(i.check(r,g,b))
+    if(i.check(c))
         return 'i';
-    if(j.check(r,g,b))
+    if(j.check(c))
         return 'j';
-    if(t.check(r,g,b))
+    if(t.check(c))
         return 't';
     return 'x';
 }

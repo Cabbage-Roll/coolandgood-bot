@@ -31,7 +31,7 @@ void codeshift(char* bag){
     Sleep(1);
     screen = GetDC(desktop);
     pixel = GetPixel(screen, cfg[5], cfg[4]);
-    bag[6]=determinepiece(GetRValue(pixel), GetGValue(pixel), GetBValue(pixel));
+    bag[6]=determinepiece(pixel);
     ReleaseDC(NULL, screen);
 }
 
@@ -87,41 +87,26 @@ int main()
         Sleep(10);
     }
     cout<<"B PRESSED"<<"\n";
-
-    ///scan the state of board during countdown
-    ///can be shortened
     screen = GetDC(desktop);
     pixel = GetPixel(screen, cfg[5], cfg[0]);
-    bag[1]=determinepiece(GetRValue(pixel), GetGValue(pixel), GetBValue(pixel));
-
+    bag[1]=determinepiece(pixel);
     pixel = GetPixel(screen, cfg[5], cfg[1]);
-    bag[2]=determinepiece(GetRValue(pixel), GetGValue(pixel), GetBValue(pixel));
-
+    bag[2]=determinepiece(pixel);
     pixel = GetPixel(screen, cfg[5], cfg[2]);
-    bag[3]=determinepiece(GetRValue(pixel), GetGValue(pixel), GetBValue(pixel));
-
+    bag[3]=determinepiece(pixel);
     pixel = GetPixel(screen, cfg[5], cfg[3]);
-    bag[4]=determinepiece(GetRValue(pixel), GetGValue(pixel), GetBValue(pixel));
-
+    bag[4]=determinepiece(pixel);
     pixel = GetPixel(screen, cfg[5], cfg[4]);
-    bag[5]=determinepiece(GetRValue(pixel), GetGValue(pixel), GetBValue(pixel));
-
-
-    ///wait for match to start, by detecting if a piece spawned
+    bag[5]=determinepiece(pixel);
     do{
         ReleaseDC(NULL, screen);
         screen = GetDC(desktop);
         pixel = GetPixel(screen, cfg[5]-cfg[6], cfg[7]);
         Sleep(1);
     }while(GetGValue(pixel)==0);
-    ///scan the 5th piece of next queue again
-
     pixel = GetPixel(screen, cfg[5], cfg[4]);
-    bag[6]=determinepiece(GetRValue(pixel), GetGValue(pixel), GetBValue(pixel));
-
-
+    bag[6]=determinepiece(pixel);
     ReleaseDC(NULL, screen);
-
     ///Special 1st bag
     if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && pos('o',bag)+pos('t',bag)!=3){
         if(pos('j',bag)<pos('l',bag)){
@@ -203,7 +188,7 @@ int main()
         }
         ///1st bag
         codeflush(bag);
-        if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && pos('o',bag)+pos('t',bag)!=3){
+        if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && (pos('o',bag)+pos('t',bag)!=3 || pos('s',bag)+pos('t',bag)!=3)){
             if(pos('j',bag)<pos('l',bag)){
                 for(n=0;n<7;n++){
                     commoncode(bag);

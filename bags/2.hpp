@@ -140,7 +140,7 @@ void b2FL(char* bag){
                         kb(VK_CW,0);
                         kb(VK_LEFT,0);
                     }else{
-                        kb(VK_CCW,0);
+                        kb(VK_CW,0);
                     }
                     kb(VK_SPACE,0);
                     holded=false;
@@ -176,14 +176,46 @@ void b2FL(char* bag){
         }
         break;
     case 't':
-        kb(VK_RIGHT,0);
-        kb(VK_DOWN,0);
-        kb(VK_RIGHT,0);
-        kb(VK_CCW,0);
-        kb(VK_CCW,0);
-        kb(VK_SPACE,0);
-        holded=false;
-        t.placed=true;
+        if(l.placed){
+            if(i.placed){
+                if(j.placed){
+                    kb(VK_RIGHT,0);
+                    kb(VK_DOWN,0);
+                    kb(VK_RIGHT,0);
+                    kb(VK_CCW,0);
+                    kb(VK_CCW,0);
+                    kb(VK_SPACE,0);
+                    holded=false;
+                    t.placed=true;
+                }else{
+                    codehold(bag);
+                    n--;
+                }
+            }else if(j.placed){
+                kb(VK_RIGHT,0);
+                kb(VK_DOWN,0);
+                kb(VK_RIGHT,0);
+                kb(VK_CCW,0);
+                kb(VK_RIGHT,0);
+                kb(VK_DOWN,0);
+                kb(VK_CCW,0);
+                kb(VK_SPACE,0);
+                holded=false;
+                t.placed=true;
+            }else{
+                kb(VK_RIGHT,0);
+                kb(VK_RIGHT,0);
+                kb(VK_CW,0);
+                kb(VK_DOWN,0);
+                kb(VK_CW,0);
+                kb(VK_SPACE,0);
+                holded=false;
+                t.placed=true;
+            }
+        }else{
+            codehold(bag);
+            n--;
+        }
         break;
     }
 }

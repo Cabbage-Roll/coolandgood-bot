@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1599260014 source:c:\users\laptop\documents\codeblocks\coolandgood\main.cpp
+1599424249 source:c:\users\laptop\documents\codeblocks\coolandgood\main.cpp
 	<iostream>
 	<windows.h>
 	<bits/stdc++.h>
@@ -17,9 +17,9 @@
 
 1599045452 source:c:\users\laptop\documents\codeblocks\coolandgood\piece.cpp
 
-1599259934 c:\users\laptop\documents\codeblocks\coolandgood\piece.hpp
+1599422254 c:\users\laptop\documents\codeblocks\coolandgood\piece.hpp
 
-1599051663 c:\users\laptop\documents\codeblocks\coolandgood\determinepiece.hpp
+1599421512 c:\users\laptop\documents\codeblocks\coolandgood\determinepiece.hpp
 	"piece.hpp"
 
 1599259954 c:\users\laptop\documents\codeblocks\coolandgood\kb.hpp
@@ -35,7 +35,7 @@
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1599218318 c:\users\laptop\documents\codeblocks\coolandgood\bags\2.hpp
+1599423803 c:\users\laptop\documents\codeblocks\coolandgood\bags\2.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
