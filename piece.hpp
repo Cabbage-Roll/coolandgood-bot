@@ -35,4 +35,5 @@ int n;
 bool holded=false;
 char temp;
 int cfg[10];
+bool path1;
 #endif

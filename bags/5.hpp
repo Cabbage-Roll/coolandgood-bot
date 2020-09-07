@@ -93,6 +93,9 @@ switch(bag[1]){
             break;
         }
 }
+/**bags that dont work cuz no t spin
+iojszlt
+**/
 
 void b5IJ(char* bag){
     switch(bag[1]){
@@ -115,11 +118,21 @@ void b5IJ(char* bag){
         }
         break;
     case 'l':
-        kb(VK_CW,0);
-        kb(VK_RIGHT,0);
-        kb(VK_SPACE,0);
-        l.placed=true;
-        holded=false;
+        if(i.placed){
+            kb(VK_CCW,0);
+            kb(VK_RIGHT,0);
+            kb(VK_DOWN,0);
+            kb(VK_UP,0);
+            kb(VK_SPACE,0);
+            l.placed=true;
+            holded=false;
+        }else{
+            kb(VK_CW,0);
+            kb(VK_RIGHT,0);
+            kb(VK_SPACE,0);
+            l.placed=true;
+            holded=false;
+        }
         break;
     case 'o':
         kb(VK_LEFT,1);
@@ -145,7 +158,7 @@ void b5IJ(char* bag){
         }
         break;
     case 'i':
-        if(j.placed || s.placed){
+        if(l.placed || s.placed){
             kb(VK_RIGHT,1);
             kb(VK_SPACE,0);
             i.placed=true;

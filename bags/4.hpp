@@ -91,10 +91,19 @@ switch(bag[1]){
 void b4ZS(char* bag){
     switch(bag[1]){
     case 'z':
-        kb(VK_LEFT,0);
-        kb(VK_SPACE,0);
-        holded=false;
-        z.placed=true;
+        if(l.placed){
+            kb(VK_CCW,0);
+            kb(VK_DOWN,0);
+            kb(VK_CCW,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            z.placed=true;
+        }else{
+            kb(VK_LEFT,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            z.placed=true;
+        }
         break;
     case 'l':
         if(o.placed){

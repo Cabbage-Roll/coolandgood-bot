@@ -212,6 +212,21 @@ void b2FL(char* bag){
                 holded=false;
                 t.placed=true;
             }
+        }else if(j.placed){
+            kb(VK_UP,0);
+            kb(VK_RIGHT,0);
+            kb(VK_DOWN,0);
+            kb(VK_RIGHT,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            t.placed=true;
+        }else if(holded){
+            kb(VK_RIGHT,0);
+            kb(VK_RIGHT,0);
+            kb(VK_UP,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            t.placed=true;
         }else{
             codehold(bag);
             n--;

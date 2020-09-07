@@ -72,11 +72,11 @@ void commoncode(char* bag){
 int main()
 {
     ifstream config;
-    config.open("config.txt", ios::in);
+    config.open("config.txt");
     for(n=0;n<10;n++){
         config>>cfg[n];
-        cout<<cfg[n]<<endl;
     }
+    config.close();
     char* bag=(char*)malloc(sizeof(char)*7);
     bag[0]='x';
     ///wait for B keypress
@@ -109,18 +109,22 @@ int main()
     ReleaseDC(NULL, screen);
     ///Special 1st bag
     if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && pos('o',bag)+pos('t',bag)!=3){
+            ///tzsoijl
         if(pos('j',bag)<pos('l',bag)){
+            cout<<"b1 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 b1(bag);
             }
         }else{
+            cout<<"b1LOJ chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 b1LOJ(bag);
             }
         }
     }else{
+        cout<<"b12 chosen\n";
         for(n=0;n<7;n++){
             commoncode(bag);
             b12(bag);
@@ -130,6 +134,7 @@ int main()
         ///2nd bag
         codeflush(bag);
         if(pos('j',bag)<pos('z',bag) || pos('j',bag)<pos('s',bag)){
+            cout<<"b2 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 if(((bag[0]=='o' || bag[0]=='j') && n<6) && holded==false){
@@ -141,6 +146,7 @@ int main()
             }
 
         }else{
+            cout<<"b2FL chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 b2FL(bag);
@@ -149,38 +155,50 @@ int main()
         }
         ///3rd bag
         codeflush(bag);
-        if(pos('o',bag)<pos('j',bag) || pos('t',bag)<pos('l',bag)){
+        if((pos('o',bag)<pos('j',bag) || pos('t',bag)<pos('l',bag)) || pos('o',bag)==1){
+            cout<<"b3 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 b3(bag);
             }
         }else{
+            cout<<"b3p1 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 b3p1(bag);
+                path1=true;
             }
         }
         ///4th bag
         codeflush(bag);
-        if(pos('z',bag)<pos('s',bag) && pos('z',bag)<pos('o',bag)){
-            for(n=0;n<7;n++){
-                commoncode(bag);
-                b4ZS(bag);
+        if(path1==false){
+            if(pos('z',bag)<pos('s',bag) && pos('z',bag)<pos('o',bag)){
+                cout<<"b4ZS chosen\n";
+                for(n=0;n<7;n++){
+                    commoncode(bag);
+                    b4ZS(bag);
+                }
+            }else{
+                cout<<"b4 chosen\n";
+                for(n=0;n<7;n++){
+                    commoncode(bag);
+                    b4(bag);
+                }
             }
         }else{
-            for(n=0;n<7;n++){
-                commoncode(bag);
-                b4(bag);
-            }
+            while(1)
+            cout<<"unhandled"<<endl;
         }
         ///5th bag
         codeflush(bag);
-        if(pos('z',bag)<pos('l',bag)){
+        if((pos('z',bag)<pos('l',bag) || (pos('t',bag)<pos('j',bag) && pos('t',bag)<pos('l',bag))) || pos('l',bag)+pos('j',bag)>5){
+            cout<<"b5 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 b5(bag);
             }
         }else{
+            cout<<"b5IJ chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 b5IJ(bag);
@@ -188,19 +206,22 @@ int main()
         }
         ///1st bag
         codeflush(bag);
-        if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && (pos('o',bag)+pos('t',bag)!=3 || pos('s',bag)+pos('t',bag)!=3)){
+        if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && (pos('o',bag)+pos('t',bag)!=3 && pos('s',bag)+pos('t',bag)!=3)){
             if(pos('j',bag)<pos('l',bag)){
+                cout<<"b1 chosen\n";
                 for(n=0;n<7;n++){
                     commoncode(bag);
                     b1(bag);
                 }
             }else{
+                cout<<"b1LOJ chosen\n";
                 for(n=0;n<7;n++){
                     commoncode(bag);
                     b1LOJ(bag);
                 }
             }
         }else{
+            cout<<"b12 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
                 b12(bag);
