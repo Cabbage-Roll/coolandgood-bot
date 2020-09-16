@@ -22,19 +22,6 @@
 
 using namespace std;
 
-void debug1(char* bag){
-    cout<<"holds: "<<hold<<"\n";
-    cout<<"all:"<<bag[0]<<bag[1]<<bag[2]<<bag[3]<<bag[4]<<bag[5]<<bag[6]<<"\n";
-    cout<<"placed zlosijt:"<<z_placed<<l_placed<<o_placed<<s_placed<<i_placed<<j_placed<<t_placed<<"\n";
-    cout<<"\n";
-}
-
-void debug2(char* bag){
-    cout<<"n: "<<n<<"\n";
-    cout<<"holded: "<<holded<<"\n";
-    cout<<"\n";
-}
-
 int main()
 {
     ifstream config;
@@ -45,11 +32,9 @@ int main()
     config.close();
     char* bag=(char*)malloc(sizeof(char)*7);
     bag[0]='x';
-    ///wait for B keypress
-    short waitfor=0x42;
     while(1){
-        if(GetAsyncKeyState(waitfor))
-        break;
+        if(GetAsyncKeyState(0x42))
+            break;
         Sleep(10);
     }
     cout<<"B PRESSED"<<"\n";
@@ -179,6 +164,12 @@ int main()
                 b5IJ(bag);
             }
         }
+        normal();
+        if(pos(s,bag)<pos(z,bag)){
+        mirror();
+        cout<<"mirror"<<endl;
+        }
+
         ///1st bag
         codeflush(bag);
         if((pos(o,bag)<pos(j,bag) || pos(o,bag)<pos(l,bag)) && (pos(o,bag)+pos(t,bag)!=3 && pos(s,bag)+pos(t,bag)!=3)){

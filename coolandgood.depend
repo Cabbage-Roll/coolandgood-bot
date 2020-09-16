@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1600295218 source:c:\users\laptop\documents\codeblocks\coolandgood\main.cpp
+1600297960 source:c:\users\laptop\documents\codeblocks\coolandgood\main.cpp
 	<iostream>
 	<windows.h>
 	<bits/stdc++.h>
@@ -37,19 +37,19 @@
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1600198786 c:\users\laptop\documents\codeblocks\coolandgood\bags\2.hpp
+1600298248 c:\users\laptop\documents\codeblocks\coolandgood\bags\2.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1600198786 c:\users\laptop\documents\codeblocks\coolandgood\bags\3.hpp
+1600298248 c:\users\laptop\documents\codeblocks\coolandgood\bags\3.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1600198786 c:\users\laptop\documents\codeblocks\coolandgood\bags\4.hpp
+1600298248 c:\users\laptop\documents\codeblocks\coolandgood\bags\4.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1600198786 c:\users\laptop\documents\codeblocks\coolandgood\bags\5.hpp
+1600298248 c:\users\laptop\documents\codeblocks\coolandgood\bags\5.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
@@ -93,7 +93,7 @@
 1600203975 c:\users\laptop\documents\codeblocks\coolandgood\codeflush.hpp
 	"codeshift.hpp"
 
-1600294736 c:\users\laptop\documents\codeblocks\coolandgood\commoncode.hpp
+1600298419 c:\users\laptop\documents\codeblocks\coolandgood\commoncode.hpp
 	"codeshift.hpp"
 	"codehold.hpp"
 	"mirror.hpp"
