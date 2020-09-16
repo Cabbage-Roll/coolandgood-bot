@@ -9,6 +9,10 @@
 #include "kb.hpp"
 #include "codehold.hpp"
 #include "pos.hpp"
+#include "codeshift.hpp"
+#include "codeflush.hpp"
+#include "commoncode.hpp"
+#include "mirror.hpp"
 
 #include "bags/1.hpp"
 #include "bags/2.hpp"
@@ -16,39 +20,18 @@
 #include "bags/4.hpp"
 #include "bags/5.hpp"
 
+#include "bags/mirror/1.hpp"
+#include "bags/mirror/2.hpp"
+#include "bags/mirror/3.hpp"
+#include "bags/mirror/4.hpp"
+#include "bags/mirror/5.hpp"
+
 using namespace std;
 
-HWND desktop = GetDesktopWindow();
-HDC screen;
-unsigned long pixel;
-
-void codeshift(char* bag){
-    bag[1]=bag[2];
-    bag[2]=bag[3];
-    bag[3]=bag[4];
-    bag[4]=bag[5];
-    bag[5]=bag[6];
-    Sleep(1);
-    screen = GetDC(desktop);
-    pixel = GetPixel(screen, cfg[5], cfg[4]);
-    bag[6]=determinepiece(pixel);
-    ReleaseDC(NULL, screen);
-}
-
-void codeflush(char* bag){
-    z.placed=false;
-    l.placed=false;
-    o.placed=false;
-    s.placed=false;
-    i.placed=false;
-    j.placed=false;
-    t.placed=false;
-    codeshift(bag);
-}
 void debug1(char* bag){
     cout<<"holds: "<<hold<<"\n";
     cout<<"all:"<<bag[0]<<bag[1]<<bag[2]<<bag[3]<<bag[4]<<bag[5]<<bag[6]<<"\n";
-    cout<<"placed zlosijt:"<<z.placed<<l.placed<<o.placed<<s.placed<<i.placed<<j.placed<<t.placed<<"\n";
+    cout<<"placed zlosijt:"<<z_placed<<l_placed<<o_placed<<s_placed<<i_placed<<j_placed<<t_placed<<"\n";
     cout<<"\n";
 }
 
@@ -56,17 +39,6 @@ void debug2(char* bag){
     cout<<"n: "<<n<<"\n";
     cout<<"holded: "<<holded<<"\n";
     cout<<"\n";
-}
-
-void commoncode(char* bag){
-    if((n>0 && holded==false) || hold==1){
-        codeshift(bag);
-        }
-
-    if(n==6 && hold>0){
-        codehold(bag);
-    }
-
 }
 
 int main()
@@ -107,29 +79,38 @@ int main()
     pixel = GetPixel(screen, cfg[5], cfg[4]);
     bag[6]=determinepiece(pixel);
     ReleaseDC(NULL, screen);
-    ///Special 1st bag
-    if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && pos('o',bag)+pos('t',bag)!=3){
-            ///tzsoijl
-        if(pos('j',bag)<pos('l',bag)){
-            cout<<"b1 chosen\n";
-            for(n=0;n<7;n++){
-                commoncode(bag);
-                b1(bag);
+
+
+    normal();
+    ///Special 1st bag plus
+
+    if(pos('s',bag)<pos('z',bag)){
+        mirror();
+        cout<<"mirror"<<endl;
+    }
+        if((pos(o,bag)<pos(j,bag) || pos(o,bag)<pos(l,bag)) && pos(o,bag)+pos(t,bag)!=3){
+                ///tzsoijl
+            if(pos(j,bag)<pos(l,bag)){
+                cout<<"b1 chosen\n";
+                for(n=0;n<7;n++){
+                    commoncode(bag);
+                    b1(bag);
+                }
+            }else{
+                cout<<"b1LOJ chosen\n";
+                for(n=0;n<7;n++){
+                    commoncode(bag);
+                    b1LOJ(bag);
+                }
             }
         }else{
-            cout<<"b1LOJ chosen\n";
+            cout<<"b12 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
-                b1LOJ(bag);
+                b12(bag);
             }
         }
-    }else{
-        cout<<"b12 chosen\n";
-        for(n=0;n<7;n++){
-            commoncode(bag);
-            b12(bag);
-        }
-    }
+
     while(1){
         ///2nd bag
         codeflush(bag);
@@ -228,5 +209,6 @@ int main()
             }
         }
     }
+
     return 0;
 }

@@ -1,6 +1,5 @@
 #ifndef CODEHOLD_HPP
 #define CODEHOLD_HPP
-#include "piece.hpp"
 #include "kb.hpp"
 void codehold(char *bag){
     char temp;

@@ -1,21 +1,20 @@
 #ifndef DETERMINEPIECE_HPP
 #define DETERMINEPIECE_HPP
-#include "piece.hpp"
 
 char determinepiece(unsigned long c){
-    if(z.check(c))
+    if(c==0x00241ced)
         return 'z';
-    if(l.check(c))
+    if(c==0x00277fff)
         return 'l';
-    if(o.check(c))
+    if(c==0x0000f2ff)
         return 'o';
-    if(s.check(c))
+    if(c==0x004cb122)
         return 's';
-    if(i.check(c))
+    if(c==0x00e8a200)
         return 'i';
-    if(j.check(c))
+    if(c==0x00cc483f)
         return 'j';
-    if(t.check(c))
+    if(c==0x00a449a3)
         return 't';
     return 'x';
 }

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1599496968 source:c:\users\laptop\documents\codeblocks\coolandgood\main.cpp
+1600294647 source:c:\users\laptop\documents\codeblocks\coolandgood\main.cpp
 	<iostream>
 	<windows.h>
 	<bits/stdc++.h>
@@ -9,47 +9,101 @@
 	"kb.hpp"
 	"codehold.hpp"
 	"pos.hpp"
+	"codeshift.hpp"
+	"codeflush.hpp"
+	"commoncode.hpp"
+	"mirror.hpp"
 	"bags/1.hpp"
 	"bags/2.hpp"
 	"bags/3.hpp"
 	"bags/4.hpp"
 	"bags/5.hpp"
+	"bags/mirror/1.hpp"
+	"bags/mirror/2.hpp"
+	"bags/mirror/3.hpp"
+	"bags/mirror/4.hpp"
+	"bags/mirror/5.hpp"
 
 1599045452 source:c:\users\laptop\documents\codeblocks\coolandgood\piece.cpp
 
-1599444534 c:\users\laptop\documents\codeblocks\coolandgood\piece.hpp
+1600294736 c:\users\laptop\documents\codeblocks\coolandgood\piece.hpp
 
-1599421512 c:\users\laptop\documents\codeblocks\coolandgood\determinepiece.hpp
-	"piece.hpp"
+1600198532 c:\users\laptop\documents\codeblocks\coolandgood\determinepiece.hpp
 
-1599259954 c:\users\laptop\documents\codeblocks\coolandgood\kb.hpp
+1600290532 c:\users\laptop\documents\codeblocks\coolandgood\kb.hpp
 	<windows.h>
 	<iostream>
 	"piece.hpp"
 
-1599477568 c:\users\laptop\documents\codeblocks\coolandgood\codehold.hpp
-	"piece.hpp"
+1600202970 c:\users\laptop\documents\codeblocks\coolandgood\codehold.hpp
 	"kb.hpp"
 
-1599185633 c:\users\laptop\documents\codeblocks\coolandgood\bags\1.hpp
+1600284636 c:\users\laptop\documents\codeblocks\coolandgood\bags\1.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1599492628 c:\users\laptop\documents\codeblocks\coolandgood\bags\2.hpp
+1600198786 c:\users\laptop\documents\codeblocks\coolandgood\bags\2.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1599444330 c:\users\laptop\documents\codeblocks\coolandgood\bags\3.hpp
+1600198786 c:\users\laptop\documents\codeblocks\coolandgood\bags\3.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1599496770 c:\users\laptop\documents\codeblocks\coolandgood\bags\4.hpp
+1600198786 c:\users\laptop\documents\codeblocks\coolandgood\bags\4.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
-1599497719 c:\users\laptop\documents\codeblocks\coolandgood\bags\5.hpp
+1600198786 c:\users\laptop\documents\codeblocks\coolandgood\bags\5.hpp
 	"../piece.hpp"
 	"../codehold.hpp"
 
 1599118661 c:\users\laptop\documents\codeblocks\coolandgood\pos.hpp
+
+1600260212 c:\users\laptop\documents\codeblocks\coolandgood\bags\mirror\1.hpp
+	"../../piece.hpp"
+	"../../codehold.hpp"
+
+1600203059 c:\users\laptop\documents\codeblocks\coolandgood\bags\mirror\2.hpp
+	"../../piece.hpp"
+	"../../codehold.hpp"
+
+1600203059 c:\users\laptop\documents\codeblocks\coolandgood\bags\mirror\3.hpp
+	"../../piece.hpp"
+	"../../codehold.hpp"
+
+1600203059 c:\users\laptop\documents\codeblocks\coolandgood\bags\mirror\4.hpp
+	"../../piece.hpp"
+	"../../codehold.hpp"
+
+1600203059 c:\users\laptop\documents\codeblocks\coolandgood\bags\mirror\5.hpp
+	"../../piece.hpp"
+	"../../codehold.hpp"
+
+1600203519 c:\users\laptop\documents\codeblocks\coolandgood\mirrored.hpp
+	<iostream>
+	<windows.h>
+	<bits/stdc++.h>
+	<fstream>
+	"piece.hpp"
+	"determinepiece.hpp"
+	"kb.hpp"
+	"codehold.hpp"
+	"pos.hpp"
+
+1600204084 c:\users\laptop\documents\codeblocks\coolandgood\codeshift.hpp
+	"piece.hpp"
+	<windows.h>
+
+1600203975 c:\users\laptop\documents\codeblocks\coolandgood\codeflush.hpp
+	"codeshift.hpp"
+
+1600294736 c:\users\laptop\documents\codeblocks\coolandgood\commoncode.hpp
+	"codeshift.hpp"
+	"codehold.hpp"
+	"mirror.hpp"
+
+1600294736 c:\users\laptop\documents\codeblocks\coolandgood\mirror.hpp
+	"piece.hpp"
+	"kb.hpp"
 

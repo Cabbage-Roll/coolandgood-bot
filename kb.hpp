@@ -23,4 +23,5 @@ void kb(short d, bool m){
     Sleep(cfg[8]-cfg[9]*m);
     }
 }
+
 #endif

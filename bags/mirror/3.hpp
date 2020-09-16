@@ -1,7 +1,7 @@
 #ifndef BAG3_HPP
 #define BAG3_HPP
-#include "../piece.hpp"
-#include "../codehold.hpp"
+#include "../../piece.hpp"
+#include "../../codehold.hpp"
 void b3(char* bag){
     switch(bag[1]){
         case 'z':

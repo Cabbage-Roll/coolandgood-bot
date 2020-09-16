@@ -1,107 +1,19 @@
-#ifndef BAG1_HPP
-#define BAG1_HPP
-#include "../piece.hpp"
-#include "../codehold.hpp"
-void b1(char* bag){
-
-    if(bag[1]==z){
-        kb(right,1);
+#ifndef MBAG1_HPP
+#define MBAG1_HPP
+#include "../../piece.hpp"
+#include "../../codehold.hpp"
+void mb1(char* bag){
+    switch(bag[1]){
+    case 's':
+        kb(VK_LEFT,1);
         kb(VK_SPACE,0);
         holded=false;
-        z_placed=true;
-    }else if(bag[1]==l){
+        s_placed=true;
+        break;
+    case 'j':
         if(o_placed){
             kb(VK_UP,0);
-            kb(left,1);
-            kb(VK_SPACE,0);
-            holded=false;
-            l_placed=true;
-        }else{
-            codehold(bag);
-            n--;
-        }
-    }else if(bag[1]==o){
-        if(j_placed){
-            kb(left,1);
-            kb(right,0);
-            kb(VK_SPACE,0);
-            holded=false;
-            o_placed=true;
-        }else{
-            codehold(bag);
-            n--;
-        }
-    }else if(bag[1]==s){
-        if(z_placed){
-            kb(cw,0);
-            kb(right,1);
-            kb(VK_SPACE,0);
-            holded=false;
-            s_placed=true;
-        }else{
-            codehold(bag);
-            n--;
-        }
-    }else if(bag[1]==i){
-        kb(VK_SPACE,0);
-        holded=false;
-        i_placed=true;
-    }else if(bag[1]==j){
-        kb(left,1);
-        kb(VK_SPACE,0);
-        holded=false;
-        j_placed=true;
-    }else if(bag[1]==t){
-        if(i_placed){
-            kb(VK_SPACE,0);
-            holded=false;
-            t_placed=true;
-        }else{
-            codehold(bag);
-            n--;
-        }
-    }
-}
-void b1LOJ(char* bag){
-    if(bag[1]==z){
-        kb(right,1);
-        kb(VK_SPACE,0);
-        holded=false;
-        z_placed=true;
-    }else if(bag[1]==l){
-        kb(left,1);
-        kb(VK_SPACE,0);
-        holded=false;
-        l_placed=true;
-    }else if(bag[1]==o){
-        if(l_placed){
-            kb(left,1);
-            kb(VK_SPACE,0);
-            holded=false;
-            o_placed=true;
-        }else{
-            codehold(bag);
-            n--;
-        }
-    }else if(bag[1]==s){
-        if(z_placed){
-            kb(cw,0);
-            kb(right,1);
-            kb(VK_SPACE,0);
-            holded=false;
-            s_placed=true;
-        }else{
-            codehold(bag);
-            n--;
-        }
-    }else if(bag[1]==i){
-        kb(VK_SPACE,0);
-        holded=false;
-        i_placed=true;
-    }else if(bag[1]==j){
-        if(o_placed){
-            kb(VK_UP,0);
-            kb(left,1);
+            kb(VK_RIGHT,1);
             kb(VK_SPACE,0);
             holded=false;
             j_placed=true;
@@ -109,38 +21,11 @@ void b1LOJ(char* bag){
             codehold(bag);
             n--;
         }
-    }else if(bag[1]==t){
-        if(i_placed){
-            kb(VK_SPACE,0);
-            holded=false;
-            t_placed=true;
-        }else{
-            codehold(bag);
-            n--;
-        }
-    }
-}
-
-void b12(char* bag){
-    if(bag[1]==z){
-        kb(right,1);
-        kb(VK_SPACE,0);
-        holded=false;
-        z_placed=true;
-    }else if(bag[1]==l){
-        if(j_placed){
-            kb(left,0);
-            kb(VK_SPACE,0);
-            holded=false;
-            l_placed=true;
-        }else{
-            codehold(bag);
-            n--;
-        }
-    }else if(bag[1]==o){
+        break;
+    case 'o':
         if(l_placed){
-            kb(left,1);
-            kb(right,0);
+            kb(VK_RIGHT,1);
+            kb(VK_LEFT,0);
             kb(VK_SPACE,0);
             holded=false;
             o_placed=true;
@@ -148,53 +33,194 @@ void b12(char* bag){
             codehold(bag);
             n--;
         }
-    }else if(bag[1]==s){
-        if(z_placed){
-            kb(cw,0);
-            kb(right,1);
+        break;
+    case 'z':
+        if(s_placed){
+            kb(VK_CCW,0);
+            kb(VK_LEFT,1);
             kb(VK_SPACE,0);
             holded=false;
-            s_placed=true;
+            z_placed=true;
         }else{
             codehold(bag);
             n--;
         }
-    }else if(bag[1]==i){
-        kb(ccw,0);
-        kb(left,1);
+        break;
+    case 'i':
         kb(VK_SPACE,0);
         holded=false;
         i_placed=true;
-    }else if(bag[1]==j){
-        kb(left,1);
-        kb(right,0);
+        break;
+    case 'l':
+        kb(VK_RIGHT,1);
+        kb(VK_SPACE,0);
+        holded=false;
+        l_placed=true;
+        break;
+    case 't':
+        if(i_placed){
+            kb(VK_RIGHT,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            t_placed=true;
+        }else{
+            codehold(bag);
+            n--;
+        }
+        break;
+    }
+}
+
+void mb1LOJ(char* bag){
+    switch(bag[1]){
+    case 's':
+        kb(VK_LEFT,1);
+        kb(VK_SPACE,0);
+        holded=false;
+        s_placed=true;
+        break;
+    case 'j':
+        kb(VK_RIGHT,1);
         kb(VK_SPACE,0);
         holded=false;
         j_placed=true;
-    }else if(bag[1]==t){
+        break;
+    case 'o':
+        if(j_placed){
+            kb(VK_RIGHT,1);
+            kb(VK_SPACE,0);
+            holded=false;
+            o_placed=true;
+        }else{
+            codehold(bag);
+            n--;
+        }
+        break;
+    case 'z':
+        if(s_placed){
+            kb(VK_CCW,0);
+            kb(VK_LEFT,1);
+            kb(VK_SPACE,0);
+            holded=false;
+            z_placed=true;
+        }else{
+            codehold(bag);
+            n--;
+        }
+        break;
+    case 'i':
+        kb(VK_SPACE,0);
+        holded=false;
+        i_placed=true;
+        break;
+    case 'l':
+        if(o_placed){
+            kb(VK_UP,0);
+            kb(VK_RIGHT,1);
+            kb(VK_SPACE,0);
+            holded=false;
+            l_placed=true;
+        }else{
+            codehold(bag);
+            n--;
+        }
+        break;
+    case 't':
+        if(i_placed){
+            kb(VK_RIGHT,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            t_placed=true;
+        }else{
+            codehold(bag);
+            n--;
+        }
+        break;
+    }
+}
+
+void mb12(char* bag){
+    switch(bag[1]){
+    case 's':
+        kb(VK_LEFT,1);
+        kb(VK_SPACE,0);
+        holded=false;
+        s_placed=true;
+        break;
+    case 'j':
         if(l_placed){
-            kb(right,0);
-            kb(right,0);
-            if(z_placed){
-                kb(ccw,0);
+            kb(VK_RIGHT,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            j_placed=true;
+        }else{
+            codehold(bag);
+            n--;
+        }
+        break;
+    case 'o':
+        if(j_placed){
+            kb(VK_RIGHT,1);
+            kb(VK_LEFT,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            o_placed=true;
+        }else{
+            codehold(bag);
+            n--;
+        }
+        break;
+    case 'z':
+        if(s_placed){
+            kb(VK_CCW,0);
+            kb(VK_LEFT,1);
+            kb(VK_SPACE,0);
+            holded=false;
+            z_placed=true;
+        }else{
+            codehold(bag);
+            n--;
+        }
+        break;
+    case 'i':
+        kb(VK_CW,0);
+        kb(VK_RIGHT,1);
+        kb(VK_SPACE,0);
+        holded=false;
+        i_placed=true;
+        break;
+    case 'l':
+        kb(VK_RIGHT,1);
+        kb(VK_LEFT,0);
+        kb(VK_SPACE,0);
+        holded=false;
+        l_placed=true;
+        break;
+    case 't':
+        if(j_placed){
+            kb(VK_LEFT,0);
+            kb(VK_LEFT,0);
+            if(s_placed){
+                kb(VK_CW,0);
                 kb(VK_DOWN,0);
-                kb(cw,0);
+                kb(VK_CCW,0);
                 kb(VK_SPACE,0);
                 holded=false;
                 t_placed=true;
             }else{
                 kb(VK_DOWN,0);
-                kb(left,0);
+                kb(VK_RIGHT,0);
                 kb(VK_SPACE,0);
                 holded=false;
                 t_placed=true;
             }
         }else{
-            kb(right,0);
+            kb(VK_LEFT,0);
             kb(VK_SPACE,0);
             holded=false;
             t_placed=true;
         }
+        break;
     }
 }
 #endif
