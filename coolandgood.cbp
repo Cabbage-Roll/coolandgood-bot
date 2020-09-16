@@ -40,12 +40,14 @@
 		<Unit filename="bags/3.hpp" />
 		<Unit filename="bags/4.hpp" />
 		<Unit filename="bags/5.hpp" />
-		<Unit filename="bags/bagbug.txt" />
-		<Unit filename="bags/second.txt" />
+		<Unit filename="codeflush.hpp" />
 		<Unit filename="codehold.hpp" />
+		<Unit filename="codeshift.hpp" />
+		<Unit filename="commoncode.hpp" />
 		<Unit filename="determinepiece.hpp" />
 		<Unit filename="kb.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="mirror.hpp" />
 		<Unit filename="piece.hpp" />
 		<Unit filename="pos.hpp" />
 		<Extensions />

@@ -20,12 +20,6 @@
 #include "bags/4.hpp"
 #include "bags/5.hpp"
 
-#include "bags/mirror/1.hpp"
-#include "bags/mirror/2.hpp"
-#include "bags/mirror/3.hpp"
-#include "bags/mirror/4.hpp"
-#include "bags/mirror/5.hpp"
-
 using namespace std;
 
 void debug1(char* bag){
@@ -84,7 +78,7 @@ int main()
     normal();
     ///Special 1st bag plus
 
-    if(pos('s',bag)<pos('z',bag)){
+    if(pos(s,bag)<pos(z,bag)){
         mirror();
         cout<<"mirror"<<endl;
     }
@@ -114,11 +108,11 @@ int main()
     while(1){
         ///2nd bag
         codeflush(bag);
-        if(pos('j',bag)<pos('z',bag) || pos('j',bag)<pos('s',bag)){
+        if(pos(j,bag)<pos(z,bag) || pos(j,bag)<pos(s,bag)){
             cout<<"b2 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
-                if(((bag[0]=='o' || bag[0]=='j') && n<6) && holded==false){
+                if(((bag[0]==o || bag[0]==j) && n<6) && holded==false){
                     codehold(bag);
                     n--;
                     continue;
@@ -136,7 +130,7 @@ int main()
         }
         ///3rd bag
         codeflush(bag);
-        if((pos('o',bag)<pos('j',bag) || pos('t',bag)<pos('l',bag)) || pos('o',bag)==1){
+        if((pos(o,bag)<pos(j,bag) || pos(t,bag)<pos(l,bag)) || pos(o,bag)==1){
             cout<<"b3 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
@@ -153,7 +147,7 @@ int main()
         ///4th bag
         codeflush(bag);
         if(path1==false){
-            if(pos('z',bag)<pos('s',bag) && pos('z',bag)<pos('o',bag)){
+            if(pos(z,bag)<pos(s,bag) && pos(z,bag)<pos(o,bag)){
                 cout<<"b4ZS chosen\n";
                 for(n=0;n<7;n++){
                     commoncode(bag);
@@ -172,7 +166,7 @@ int main()
         }
         ///5th bag
         codeflush(bag);
-        if((pos('z',bag)<pos('l',bag) || (pos('t',bag)<pos('j',bag) && pos('t',bag)<pos('l',bag))) || pos('l',bag)+pos('j',bag)>5){
+        if((pos(z,bag)<pos(l,bag) || (pos(t,bag)<pos(j,bag) && pos(t,bag)<pos(l,bag))) || pos(l,bag)+pos(j,bag)>5){
             cout<<"b5 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
@@ -187,8 +181,8 @@ int main()
         }
         ///1st bag
         codeflush(bag);
-        if((pos('o',bag)<pos('j',bag) || pos('o',bag)<pos('l',bag)) && (pos('o',bag)+pos('t',bag)!=3 && pos('s',bag)+pos('t',bag)!=3)){
-            if(pos('j',bag)<pos('l',bag)){
+        if((pos(o,bag)<pos(j,bag) || pos(o,bag)<pos(l,bag)) && (pos(o,bag)+pos(t,bag)!=3 && pos(s,bag)+pos(t,bag)!=3)){
+            if(pos(j,bag)<pos(l,bag)){
                 cout<<"b1 chosen\n";
                 for(n=0;n<7;n++){
                     commoncode(bag);

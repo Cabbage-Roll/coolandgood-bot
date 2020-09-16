@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1600294647 source:c:\users\laptop\documents\codeblocks\coolandgood\main.cpp
+1600295218 source:c:\users\laptop\documents\codeblocks\coolandgood\main.cpp
 	<iostream>
 	<windows.h>
 	<bits/stdc++.h>
@@ -18,11 +18,6 @@
 	"bags/3.hpp"
 	"bags/4.hpp"
 	"bags/5.hpp"
-	"bags/mirror/1.hpp"
-	"bags/mirror/2.hpp"
-	"bags/mirror/3.hpp"
-	"bags/mirror/4.hpp"
-	"bags/mirror/5.hpp"
 
 1599045452 source:c:\users\laptop\documents\codeblocks\coolandgood\piece.cpp
 
