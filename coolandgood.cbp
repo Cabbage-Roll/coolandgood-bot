@@ -44,6 +44,7 @@
 		<Unit filename="codehold.hpp" />
 		<Unit filename="codeshift.hpp" />
 		<Unit filename="commoncode.hpp" />
+		<Unit filename="config.txt" />
 		<Unit filename="determinepiece.hpp" />
 		<Unit filename="kb.hpp" />
 		<Unit filename="main.cpp" />

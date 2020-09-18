@@ -114,7 +114,7 @@ int main()
         }
         ///3rd bag
         codeflush(bag);
-        if((pos(o,bag)<pos(j,bag) || pos(t,bag)<pos(l,bag)) || pos(o,bag)==1){
+        if(false/*(pos(o,bag)<pos(j,bag) || pos(t,bag)<pos(l,bag)) || pos(o,bag)==1*/){
             cout<<"b3 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
@@ -145,8 +145,11 @@ int main()
                 }
             }
         }else{
-            while(1)
-            cout<<"unhandled"<<endl;
+            cout<<"b4_15 testing"<<endl;
+            for(n=0;n<7;n++){
+                commoncode(bag);
+                b4_15(bag);
+            }
         }
         ///5th bag
         codeflush(bag);

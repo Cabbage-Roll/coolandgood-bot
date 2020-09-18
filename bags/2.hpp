@@ -159,7 +159,6 @@ void b2FL(char* bag){
             }
         }else{
             codehold(bag);
-
         }
 
     }else if(bag[1]==j){
