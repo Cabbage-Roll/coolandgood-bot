@@ -7,7 +7,7 @@ if(bag[1]==z){
 
             if(o_placed==false){
                 codehold(bag);
-                n--;
+
             }else{
                 kb(left,0);
                 kb(VK_SPACE,0);
@@ -32,7 +32,7 @@ if(bag[1]==z){
                 l_placed=true;
             }else{
                 codehold(bag);
-                n--;
+
             }
 
         }else if(bag[1]==o){
@@ -74,7 +74,7 @@ if(bag[1]==z){
         }else if(bag[1]==t){
             if(i_placed==false || j_placed==false){
                 codehold(bag);
-                n--;
+
             }else{
                 kb(right,1);
                 kb(ccw,0);
@@ -113,7 +113,7 @@ void b4ZS(char* bag){
             l_placed=true;
         }else{
             codehold(bag);
-            n--;
+
         }
 
     }else if(bag[1]==o){
@@ -130,7 +130,7 @@ void b4ZS(char* bag){
             s_placed=true;
         }else{
             codehold(bag);
-            n--;
+
         }
 
     }else if(bag[1]==i){
@@ -159,7 +159,7 @@ void b4ZS(char* bag){
             t_placed=true;
         }else{
             codehold(bag);
-            n--;
+
         }
     }
     }

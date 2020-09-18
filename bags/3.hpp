@@ -13,7 +13,7 @@ void b3(char* bag){
         }else if(bag[1]==l){
             if(t_placed==false){
                 codehold(bag);
-                n--;
+
             }else{
                 kb(cw,0);
                 kb(right,0);
@@ -54,7 +54,7 @@ void b3(char* bag){
         }else if(bag[1]==j){
             if(o_placed==false){
                 codehold(bag);
-                n--;
+
             }else{
                 kb(cw,0);
                 kb(left,1);
@@ -96,7 +96,7 @@ void b3p1(char* bag){
     }else if(bag[1]==l){
         if(t_placed==false){
             codehold(bag);
-            n--;
+
         }else{
             kb(cw,0);
             kb(right,0);
@@ -121,7 +121,7 @@ void b3p1(char* bag){
             s_placed=true;
         }else{
             codehold(bag);
-            n--;
+
         }
 
     }else if(bag[1]==i){

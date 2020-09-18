@@ -10,6 +10,7 @@ void commoncode(char* bag){
 
     if(n==6 && hold>0){
         codehold(bag);
+        n++;
     }
 
     if(mirr==true){

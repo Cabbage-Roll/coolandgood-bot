@@ -7,7 +7,7 @@ void b2(char* bag){
 
             if(s_placed==true && j_placed==false){
                 codehold(bag);
-                n--;
+
             }else{
                 kb(ccw,0);
                 kb(left,0);
@@ -38,7 +38,7 @@ void b2(char* bag){
                     s_placed=true;
                 }else{
                     codehold(bag);
-                    n--;
+
                 }
             }else{
                 kb(cw,0);
@@ -85,7 +85,7 @@ void b2(char* bag){
                 t_placed=true;
             }else{
                 codehold(bag);
-                n--;
+
             }
         }
     }
@@ -159,7 +159,7 @@ void b2FL(char* bag){
             }
         }else{
             codehold(bag);
-            n--;
+
         }
 
     }else if(bag[1]==j){
@@ -171,7 +171,7 @@ void b2FL(char* bag){
             j_placed=true;
         }else{
             codehold(bag);
-            n--;
+
         }
 
     }else if(bag[1]==t){
@@ -188,7 +188,7 @@ void b2FL(char* bag){
                     t_placed=true;
                 }else{
                     codehold(bag);
-                    n--;
+
                 }
             }else if(j_placed){
                 kb(right,0);
@@ -228,7 +228,7 @@ void b2FL(char* bag){
             t_placed=true;
         }else{
             codehold(bag);
-            n--;
+
         }
     }
     }

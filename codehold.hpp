@@ -9,5 +9,6 @@ void codehold(char *bag){
     bag[1]=bag[0];
     bag[0]=temp;
     holded=true;
+    n--;
 }
 #endif

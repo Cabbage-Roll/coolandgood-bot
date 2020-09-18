@@ -99,7 +99,6 @@ int main()
                 commoncode(bag);
                 if(((bag[0]==o || bag[0]==j) && n<6) && holded==false){
                     codehold(bag);
-                    n--;
                     continue;
                 }
                 b2(bag);
@@ -151,7 +150,7 @@ int main()
         }
         ///5th bag
         codeflush(bag);
-        if((pos(z,bag)<pos(l,bag) || (pos(t,bag)<pos(j,bag) && pos(t,bag)<pos(l,bag))) || pos(l,bag)+pos(j,bag)>5){
+        if(false/*(pos(z,bag)<pos(l,bag) || (pos(t,bag)<pos(j,bag) && pos(t,bag)<pos(l,bag))) || pos(l,bag)+pos(j,bag)>5*/){
             cout<<"b5 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
