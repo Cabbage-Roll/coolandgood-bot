@@ -53,7 +53,7 @@ int main()
         ReleaseDC(NULL, screen);
         screen = GetDC(desktop);
         pixel = GetPixel(screen, cfg[5]-cfg[6], cfg[7]);
-        Sleep(1);
+        Sleep(17);
     }while(GetGValue(pixel)==0);
     pixel = GetPixel(screen, cfg[5], cfg[4]);
     bag[6]=determinepiece(pixel);
@@ -114,7 +114,7 @@ int main()
         }
         ///3rd bag
         codeflush(bag);
-        if(false/*(pos(o,bag)<pos(j,bag) || pos(t,bag)<pos(l,bag)) || pos(o,bag)==1*/){
+        if((pos(o,bag)<pos(j,bag) || pos(t,bag)<pos(l,bag)) || pos(o,bag)==1){
             cout<<"b3 chosen\n";
             for(n=0;n<7;n++){
                 commoncode(bag);
@@ -145,25 +145,41 @@ int main()
                 }
             }
         }else{
-            cout<<"b4_15 testing"<<endl;
-            for(n=0;n<7;n++){
-                commoncode(bag);
-                b4_15(bag);
+            if(pos(s,bag)<pos(z,bag)){
+                cout<<"b4_15 chosen"<<endl;
+                for(n=0;n<7;n++){
+                    commoncode(bag);
+                    b4_15(bag);
+                }
+            }else{
+                cout<<"b4_16 chosen"<<endl;
+                for(n=0;n<7;n++){
+                    commoncode(bag);
+                    b4_16(bag);
+                }
             }
         }
         ///5th bag
         codeflush(bag);
-        if(false/*(pos(z,bag)<pos(l,bag) || (pos(t,bag)<pos(j,bag) && pos(t,bag)<pos(l,bag))) || pos(l,bag)+pos(j,bag)>5*/){
-            cout<<"b5 chosen\n";
+        if(path1==true){
+            cout<<"b5_1 chosen"<<endl;
             for(n=0;n<7;n++){
                 commoncode(bag);
-                b5(bag);
+                b5_1(bag);
             }
         }else{
-            cout<<"b5IJ chosen\n";
-            for(n=0;n<7;n++){
-                commoncode(bag);
-                b5IJ(bag);
+            if(pos(z,bag)<pos(l,bag) || pos(z,bag)<pos(s,bag)){
+                cout<<"b5 chosen\n";
+                for(n=0;n<7;n++){
+                    commoncode(bag);
+                    b5(bag);
+                }
+            }else{
+                cout<<"b5IJ chosen\n";
+                for(n=0;n<7;n++){
+                    commoncode(bag);
+                    b5IJ(bag);
+                }
             }
         }
         normal();

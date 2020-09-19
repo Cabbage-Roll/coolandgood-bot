@@ -92,12 +92,20 @@ void b4ZS(char* bag){
     if(bag[1]==z){
 
         if(l_placed){
-            kb(ccw,0);
-            kb(VK_DOWN,0);
-            kb(ccw,0);
-            kb(VK_SPACE,0);
-            holded=false;
-            z_placed=true;
+            if(j_placed){
+                kb(ccw,0);
+                kb(VK_DOWN,0);
+                kb(ccw,0);
+                kb(VK_SPACE,0);
+                holded=false;
+                z_placed=true;
+            }else{
+                kb(VK_DOWN,0);
+                kb(left,0);
+                kb(VK_SPACE,0);
+                holded=false;
+                z_placed=true;
+            }
         }else{
             kb(left,0);
             kb(VK_SPACE,0);
@@ -209,7 +217,7 @@ void b4_15(char* bag){
             o_placed=true;
         }
     }else if(bag[1]==s){
-        if(l_placed && !s_placed){
+        if(l_placed && !o_placed){
             codehold(bag);
         }else{
             kb(ccw,0);
@@ -248,12 +256,63 @@ void b4_15(char* bag){
 
 void b4_16(char* bag){
     if(bag[1]==z){
+        kb(left,1);
+        kb(VK_SPACE,0);
+        holded=false;
+        z_placed=true;
     }else if(bag[1]==l){
+        if(s_placed){
+            kb(ccw,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            l_placed=true;
+        }else{
+            codehold(bag);
+        }
     }else if(bag[1]==o){
+        if(z_placed){
+            kb(left,1);
+            kb(VK_SPACE,0);
+            holded=false;
+            o_placed=true;
+        }else{
+            codehold(bag);
+        }
     }else if(bag[1]==s){
+        if(z_placed){
+            kb(ccw,0);
+            kb(left,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            s_placed=true;
+        }else{
+            codehold(bag);
+        }
     }else if(bag[1]==i){
+        kb(cw,0);
+        kb(right,1);
+        kb(VK_SPACE,0);
+        holded=false;
+        i_placed=true;
     }else if(bag[1]==j){
+        kb(cw,0);
+        kb(right,0);
+        kb(VK_SPACE,0);
+        holded=false;
+        j_placed=true;
     }else if(bag[1]==t){
+        if(i_placed && j_placed){
+            kb(right,1);
+            kb(ccw,0);
+            kb(VK_DOWN,0);
+            kb(cw,0);
+            kb(cw,0);
+            kb(VK_SPACE,0);
+            holded=false;
+            t_placed=true;
+        }else{
+            codehold(bag);
+        }
     }
 }
 #endif

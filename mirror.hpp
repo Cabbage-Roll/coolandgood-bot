@@ -3,6 +3,7 @@
 #include "piece.hpp"
 #include "kb.hpp"
 void normal(){
+    path1=false;
     left=VK_LEFT;
     right=VK_RIGHT;
     cw=VK_CW;
@@ -18,6 +19,7 @@ void normal(){
 }
 
 void mirror(){
+    path1=false;
     left=VK_RIGHT;
     right=VK_LEFT;
     cw=VK_CCW;

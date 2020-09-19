@@ -218,7 +218,7 @@ void b2FL(char* bag){
             kb(VK_SPACE,0);
             holded=false;
             t_placed=true;
-        }else if(holded){
+        }else if(holded || (bag[0]==i && !l_placed)){
             kb(right,0);
             kb(right,0);
             kb(VK_UP,0);
@@ -230,9 +230,5 @@ void b2FL(char* bag){
 
         }
     }
-    }
-
-/**
-ztjislo
-**/
+}
 #endif
