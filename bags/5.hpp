@@ -21,7 +21,8 @@ void b5(char* bag){
                 kb(VK_DOWN,0);
                 kb(left,0);
                 kb(VK_UP,0);
-                kb(left,1);
+                kb(left,0);
+                kb(left,0);
                 kb(VK_SPACE,0);
                 holded=false;
                 z_placed=true;
@@ -65,7 +66,7 @@ void b5(char* bag){
         holded=false;
         i_placed=true;
     }else if(bag[1]==j){
-        if(!t_placed && !holded && bag[0]!=s){
+        if((!t_placed && !holded) && (bag[0]!=s && bag[0]!=l)){
             codehold(bag);
         }else{
             kb(cw,0);
@@ -139,7 +140,7 @@ void b5IJ(char* bag){
     }else if(bag[1]==s){
         if(bag[0]==t && n!=6){
             codehold(bag);
-        }else if((t_placed || holded) && (bag[0]==z || n==6)){
+        }else if(t_placed || (holded && (bag[0]==z || n==6))){
             kb(right,1);
             if(z_placed){
                 kb(cw,0);
@@ -230,7 +231,7 @@ void b5_1(char* bag){
         o_placed=true;
         holded=false;
     }else if(bag[1]==s){
-        if((t_placed || holded) && bag[0]!=z){
+        if(t_placed || (holded && (bag[0]==z || n==6))){
             kb(right,1);
             if(z_placed){
                 kb(cw,0);
@@ -245,7 +246,7 @@ void b5_1(char* bag){
             codehold(bag);
         }
     }else if(bag[1]==i){
-        if(s_placed || l_placed){
+        if((o_placed && l_placed) && j_placed){
             kb(right,1);
             kb(VK_SPACE,0);
             i_placed=true;

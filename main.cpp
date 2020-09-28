@@ -168,7 +168,7 @@ int main()
                 b5_1(bag);
             }
         }else{
-            if(pos(z,bag)<pos(l,bag) || pos(z,bag)<pos(s,bag)){
+            if((pos(z,bag)<pos(l,bag) || pos(z,bag)<pos(s,bag)) && pos(j,bag)+pos(l,bag)>5){
                 cout<<"b5 chosen\n";
                 for(n=0;n<7;n++){
                     commoncode(bag);
